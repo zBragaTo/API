@@ -8,9 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/teste")
 public class TesteResources {
 	
-	@GetMapping
+	@GetMapping(value = "/oi")
 	public String getOi() {
 		return "Oi Pessoal !";
+	}
+	
+	@GetMapping("/ola")
+	public String getOla() {
+		return "Olá Pessoal !";
 	}
 
 }
