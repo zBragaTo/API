@@ -12,7 +12,7 @@ public class TesteResources {
 	public String getOi() {
 		return "Oi Pessoal !";
 	}
-	
+
 	@GetMapping("/ola")
 	public String getOla() {
 		return "Olá Pessoal !";
