@@ -20,4 +20,9 @@ public class CursoServiceimpl implements CursoService{
 		return cursoRepository.findAll();
 	}
 
+	@Override
+	public Curso save(Curso curso) {
+		return cursoRepository.save(curso);
+	}
+
 }
