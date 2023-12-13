@@ -26,11 +26,13 @@ public class CursoApiApplication implements CommandLineRunner {
 		Curso curso2 = new Curso("Graduação em ECONOMIA", "EXATAS");
 		Curso curso3 = new Curso("Graduação em ADM", "HUMANAS");
 		Curso curso4 = new Curso("Graduação em EDF", "HUMANAS");
+		Curso curso5 = new Curso("Graduação em Testes", "HUMANAS");
 
 		cursoRepository.save(curso1);
 		cursoRepository.save(curso2);
 		cursoRepository.save(curso3);
 		cursoRepository.save(curso4);
+		cursoRepository.save(curso5);
 
 	}
 }
