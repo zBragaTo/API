@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.math.BigDecimal;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,7 +18,7 @@ import com.curso.api.entities.Curso;
 @TestInstance(Lifecycle.PER_CLASS)
 class CursoTeste {
 
-	Curso c;
+	Curso c = new Curso();
 	
 	@BeforeAll
 	void iniciando() {
@@ -26,12 +28,24 @@ class CursoTeste {
 	@BeforeEach
 	void antesDeCadaUm() {
 		System.out.println("Testanto um dos métodos...");
+//		c = new Curso();
+	}
+	
+	@AfterEach
+	void depoisDeCadaUm() {
+		System.out.println("Nome do Curso: " + c.getNome());
 		c = new Curso();
 	}
 	
+	@AfterAll
+	void terminando() {
+		System.out.println("Chegamos ao final do teste ! ");
+	}
+	
 	@Test
-	void test() {
-//		fail("Not yet implemented");
+	void testaSetaNome() {
+		c.setNome("Teste de nome do curso");
+		assertNotNull(c.getNome());
 	}
 
 	@Test
