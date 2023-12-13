@@ -1,5 +1,6 @@
 package com.curso.api.resources;
 
+import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.curso.api.entities.Curso;
 import com.curso.api.entities.dto.CursoDTO;
+import com.curso.api.entities.mapper.CursoMapper;
 import com.curso.api.services.CursoService;
 
 @RestController
@@ -22,6 +24,9 @@ public class CursoResource {
 	@Autowired
 	private CursoService cursoService;
 
+	@Autowired
+	private CursoMapper map;
+
 	@GetMapping
 	public ResponseEntity<List<Curso>> getCursos() {
 
@@ -30,13 +35,11 @@ public class CursoResource {
 	}
 
 	@PostMapping("/salva")
-	public ResponseEntity<Curso> saveCurso(@RequestBody CursoDTO curso) throws URISyntaxException {
+	public ResponseEntity<Curso> saveCurso(@RequestBody CursoDTO dto) throws URISyntaxException {
 
-//		Curso novoCurso = cursoService.save(curso);
-//		
-//		return ResponseEntity.created(new URI("/cursos/salva/" + novoCurso.getId()))
-//				.body(novoCurso);
-		return null;
+		Curso novoCurso = cursoService.save(map.mapCursoDTOToCurso(dto));
+
+		return ResponseEntity.created(new URI("/cursos/salva/" + novoCurso.getId())).body(novoCurso);
 	}
 
 }
