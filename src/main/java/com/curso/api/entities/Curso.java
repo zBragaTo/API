@@ -1,5 +1,6 @@
 package com.curso.api.entities;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -23,7 +24,9 @@ import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "curso")
-public class Curso {
+public class Curso implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
