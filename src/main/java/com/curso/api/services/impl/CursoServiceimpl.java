@@ -1,6 +1,7 @@
 package com.curso.api.services.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,14 @@ public class CursoServiceimpl implements CursoService{
 	@Override
 	public Curso save(Curso curso) {
 		return cursoRepository.save(curso);
+	}
+
+	@Override
+	public Curso findById(Integer id) {
+		
+		Optional<Curso> curso = cursoRepository.findById(id);
+		
+		return curso.orElse(null);
 	}
 
 }

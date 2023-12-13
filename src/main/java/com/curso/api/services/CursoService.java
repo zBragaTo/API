@@ -9,5 +9,7 @@ public interface CursoService {
 	public List<Curso> getCursos();
 	
 	public Curso save(Curso curso);
+	
+	public Curso findById(Integer id);
 
 }
