@@ -5,12 +5,30 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import java.math.BigDecimal;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
 
 import com.curso.api.entities.Curso;
 
+@TestInstance(Lifecycle.PER_CLASS)
 class CursoTeste {
 
+	Curso c;
+	
+	@BeforeAll
+	void iniciando() {
+		System.out.println("Classe de teste CursoTeste iniciada ");
+	}
+	
+	@BeforeEach
+	void antesDeCadaUm() {
+		System.out.println("Testanto um dos métodos...");
+		c = new Curso();
+	}
+	
 	@Test
 	void test() {
 //		fail("Not yet implemented");
