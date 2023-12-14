@@ -36,14 +36,6 @@ public class CursoResource {
 		return ResponseEntity.ok().body(lista);
 	}
 
-	@PostMapping("/salva")
-	public ResponseEntity<Curso> saveCurso(@RequestBody CursoDTO dto) throws URISyntaxException {
-
-		Curso novoCurso = cursoService.save(map.mapCursoDTOToCurso(dto));
-
-		return ResponseEntity.created(new URI("/cursos/salva/" + novoCurso.getId())).body(novoCurso);
-	}
-
 	@GetMapping("/{id}")
 	public ResponseEntity<Curso> findCurso(@PathVariable Integer id) {
 
@@ -51,15 +43,23 @@ public class CursoResource {
 
 		return ResponseEntity.ok().body(curso);
 	}
-	
+
 	@GetMapping("/nome")
 	public ResponseEntity<List<Curso>> findCursoByNome(@RequestParam String valor) {
 
 		System.out.println("Nome a pesquisar: " + valor);
-	
+
 		List<Curso> cursos = cursoService.findByNome(valor);
 
 		return ResponseEntity.ok().body(cursos);
 	}
 	
+	@PostMapping
+	public ResponseEntity<Curso> saveCurso(@RequestBody CursoDTO dto) throws URISyntaxException {
+
+		Curso novoCurso = cursoService.save(map.mapCursoDTOToCurso(dto));
+
+		return ResponseEntity.created(new URI("/cursos/salva/" + novoCurso.getId())).body(novoCurso);
+	}
+
 }

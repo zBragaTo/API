@@ -23,6 +23,7 @@ public class CursoServiceimpl implements CursoService{
 
 	@Override
 	public Curso save(Curso curso) {
+		curso.setId(null);
 		return cursoRepository.save(curso);
 	}
 
