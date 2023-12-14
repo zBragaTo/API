@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,7 +28,7 @@ public class CursoResource {
 	private CursoService cursoService;
 
 	@Autowired
-	private CursoMapper map;
+	private CursoMapper mapper;
 
 	@GetMapping
 	public ResponseEntity<List<Curso>> getCursos() {
@@ -57,9 +58,21 @@ public class CursoResource {
 	@PostMapping
 	public ResponseEntity<Curso> saveCurso(@RequestBody CursoDTO dto) throws URISyntaxException {
 
-		Curso novoCurso = cursoService.save(map.mapCursoDTOToCurso(dto));
+		Curso novoCurso = cursoService.save(mapper.mapCursoDTOToCurso(dto));
 
 		return ResponseEntity.created(new URI("/cursos/salva/" + novoCurso.getId())).body(novoCurso);
 	}
+	
+	@PutMapping("/{id}")
+	public ResponseEntity<Curso> updateCurso(@RequestBody CursoDTO dto, @PathVariable Integer id)
+			throws URISyntaxException {
+
+		Curso novo = mapper.mapCursoDTOToCurso(dto);
+		novo.setId(id);
+		cursoService.update(novo);
+
+		return ResponseEntity.noContent().build();
+	}
+
 
 }

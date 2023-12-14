@@ -13,5 +13,8 @@ public interface CursoService {
 	public Curso findById(Integer id);
 	
 	public List<Curso> findByNome(String valor);
+	
+	public void update(Curso curso);
+
 
 }
