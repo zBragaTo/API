@@ -48,6 +48,13 @@ public class CursoServiceimpl implements CursoService{
 		cursoRepository.save(atual);
 
 	}
+
+	@Override
+	public void deleteById(Integer id) {
+
+		cursoRepository.deleteById(id);
+		
+	}
 	
 
 }

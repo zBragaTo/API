@@ -15,6 +15,8 @@ public interface CursoService {
 	public List<Curso> findByNome(String valor);
 	
 	public void update(Curso curso);
+	
+	public void deleteById(Integer id);
 
 
 }
