@@ -28,10 +28,13 @@ public class CursoServiceimpl implements CursoService{
 
 	@Override
 	public Curso findById(Integer id) {
-		
 		Optional<Curso> curso = cursoRepository.findById(id);
-		
 		return curso.orElse(null);
+	}
+
+	@Override
+	public List<Curso> findByNome(String valor) {
+		return cursoRepository.findByNomeContaining(valor);
 	}
 
 }

@@ -11,5 +11,7 @@ public interface CursoService {
 	public Curso save(Curso curso);
 	
 	public Curso findById(Integer id);
+	
+	public List<Curso> findByNome(String valor);
 
 }
