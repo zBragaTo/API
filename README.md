@@ -1,38 +1,44 @@
-Curso de Desenvolvimento de APIs com Spring Boot - README
-Bem-vindo ao repositório do Curso de Desenvolvimento de APIs com Spring Boot. Este curso é projetado para fornecer uma compreensão abrangente do desenvolvimento de APIs usando o framework Spring Boot. Aqui estão algumas informações úteis para aproveitar ao máximo este repositório.
+<h1>Curso de Desenvolvimento de APIs com Spring Boot - README</h1>
 
-Visão Geral do Curso
-Objetivo
-O principal objetivo deste curso é capacitar os participantes a criar APIs robustas, eficientes e seguras utilizando o framework Spring Boot. O curso abrange desde conceitos básicos até tópicos avançados, permitindo que os participantes desenvolvam habilidades práticas para projetar, implementar e documentar APIs.
+    <p>Bem-vindo ao repositório do Curso de Desenvolvimento de APIs com Spring Boot. Este curso visa proporcionar uma compreensão completa do desenvolvimento de APIs usando o framework Spring Boot. Aqui estão algumas informações úteis para tirar o máximo proveito deste repositório.</p>
 
-Tópicos Abordados
-Introdução ao Spring Boot
+    <h2>Visão Geral do Curso</h2>
 
-O que é Spring Boot?
-Configuração inicial e criação de projetos.
-RESTful APIs com Spring Boot
+    <h3>Objetivo</h3>
+    <p>O principal objetivo deste curso é capacitar os participantes a criar APIs robustas, eficientes e seguras utilizando o framework Spring Boot. O curso abrange desde conceitos básicos até tópicos avançados, permitindo que os participantes desenvolvam habilidades práticas para projetar, implementar e documentar APIs.</p>
 
-Princípios REST aplicados ao Spring Boot.
-Criação de endpoints e recursos.
-Persistência de Dados
+    <h3>Tópicos Abordados</h3>
+    <ol>
+        <li><strong>Introdução ao Spring Boot</strong>
+            <ul>
+                <li>O que é Spring Boot?</li>
+                <li>Configuração inicial e criação de projetos.</li>
+            </ul>
+        </li>
+        <li><strong>RESTful APIs com Spring Boot</strong>
+            <ul>
+                <li>Princípios REST aplicados ao Spring Boot.</li>
+                <li>Criação de endpoints e recursos.</li>
+            </ul>
+        </li>
+        <!-- Adicione outros tópicos aqui -->
+    </ol>
 
-Integração com banco de dados (JPA/Hibernate).
-Operações CRUD.
-Documentação de API com Swagger
+    <h2>Pré-requisitos</h2>
+    <p>Antes de começar o curso, é recomendado que os participantes tenham conhecimento básico em Java e familiaridade com o desenvolvimento web.</p>
 
-Geração automática de documentação.
-Anotações Swagger.
-Autenticação e Autorização
+    <h2>Recursos Adicionais</h2>
+    <p>Além das aulas, este repositório inclui recursos adicionais:</p>
+    <ul>
+        <li><strong>Códigos de Exemplo:</strong> Exemplos práticos de implementações discutidas durante o curso.</li>
+        <li><strong>Slides:</strong> Apresentações utilizadas durante as aulas.</li>
+        <li><strong>Projetos de Exemplo:</strong> Projetos Spring Boot completos para referência.</li>
+    </ul>
 
-Implementação de autenticação com Spring Security.
-Controle de acesso aos recursos.
-Manipulação de Erros e Exceções
+    <h2>Como Contribuir</h2>
+    <p>Se você encontrar problemas nos materiais ou tiver sugestões para melhorias, sinta-se à vontade para abrir uma <em>issue</em> ou enviar um <em>pull request</em>.</p>
 
-Tratamento de exceções.
-Respostas HTTP apropriadas.
-Testes de Unidade e Integração
+    <h2>Contato</h2>
+    <p>Para mais informações sobre o curso ou para esclarecer dúvidas, entre em contato através das issues ou pelo e-mail <a href="mailto:seu-email@exemplo.com">seu-email@exemplo.com</a>.</p>
 
-Testes unitários com JUnit e Mockito.
-Testes de integração.
-Pré-requisitos
-Antes de começar o curso, é recomendado que os participantes tenham conhecimento básico em Java e familiaridade com o desenvolvimento web.
+    <p><strong>Aproveite o curso e boa jornada no desenvolvimento de APIs com Spring Boot!</strong></p>
