@@ -55,7 +55,7 @@ public class CursoResource {
 
 		return ResponseEntity.ok().body(cursos);
 	}
-	
+
 	@PostMapping
 	public ResponseEntity<Curso> saveCurso(@RequestBody CursoDTO dto) throws URISyntaxException {
 
@@ -63,7 +63,7 @@ public class CursoResource {
 
 		return ResponseEntity.created(new URI("/cursos/salva/" + novoCurso.getId())).body(novoCurso);
 	}
-	
+
 	@PutMapping("/{id}")
 	public ResponseEntity<Curso> updateCurso(@RequestBody CursoDTO dto, @PathVariable Integer id)
 			throws URISyntaxException {
@@ -74,10 +74,9 @@ public class CursoResource {
 
 		return ResponseEntity.noContent().build();
 	}
-	
+
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> deleteCurso(@PathVariable Integer id)
-			throws URISyntaxException {
+	public ResponseEntity<Void> deleteCurso(@PathVariable Integer id) throws URISyntaxException {
 		cursoService.deleteById(id);
 		return ResponseEntity.noContent().build();
 	}

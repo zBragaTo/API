@@ -6,6 +6,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.RequiredArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -33,6 +36,8 @@ public class Curso implements Serializable{
 	private Integer id;
 
 	@Column(name = "nome", nullable = false)
+	@NotNull
+	@NotBlank
 	private String nome;
 
 	@Column(nullable = false)
